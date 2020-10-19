@@ -1,9 +1,6 @@
-[package]
-name = "finthnif"
-version = "0.1.0"
-authors = ["oScape <benoit.chassignol@iomentum.com>"]
-edition = "2018"
+[workspace]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[dependencies]
+members = [
+    "backend",
+    "frontend"
+]
