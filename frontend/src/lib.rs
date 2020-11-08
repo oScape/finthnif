@@ -1,5 +1,9 @@
+use chrono::DateTime;
+use day_selector::DaySelector;
 use wasm_bindgen::prelude::*;
 use yew::prelude::*;
+
+mod day_selector;
 
 struct Model {
     link: ComponentLink<Self>,
@@ -7,7 +11,7 @@ struct Model {
 }
 
 enum Msg {
-    AddOne
+    AddOne,
 }
 
 impl Component for Model {
@@ -15,15 +19,12 @@ impl Component for Model {
     type Properties = ();
 
     fn create(_props: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Self {
-            link,
-            value: 0
-        }
+        Self { link, value: 0 }
     }
 
     fn update(&mut self, msg: Self::Message) -> ShouldRender {
         match msg {
-            Msg::AddOne => self.value += 1
+            Msg::AddOne => self.value += 1,
         }
         true
     }
@@ -33,10 +34,13 @@ impl Component for Model {
     }
 
     fn view(&self) -> Html {
+        let current_day = DateTime::parse_from_rfc2822("Wed, 18 Feb 2015 23:16:09 GMT").unwrap();
+
         html! {
             <div>
                 <button onclick=self.link.callback(|_| Msg::AddOne)> { "+1" }</button>
                 <p>{ self.value }</p>
+                <DaySelector current_day=current_day />
             </div>
         }
     }
