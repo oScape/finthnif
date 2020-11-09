@@ -1,10 +1,11 @@
-use chrono::{DateTime, FixedOffset};
+// use std::{ops::Add, time::Duration};
+
+use chrono::{DateTime, FixedOffset, Duration};
 use yew::prelude::*;
 
 pub enum Msg {
     Previous,
     Next,
-    Current,
 }
 
 #[derive(Clone, Debug, Properties)]
@@ -25,8 +26,12 @@ impl Component for DaySelector {
         Self { props, link }
     }
 
-    fn update(&mut self, _msg: Self::Message) -> ShouldRender {
-        false
+    fn update(&mut self, msg: Self::Message) -> ShouldRender {
+        match msg {
+            Msg::Previous => self.props.current_day = self.props.current_day - Duration::days(1),
+            Msg::Next => self.props.current_day = self.props.current_day + Duration::days(1),
+        }
+        true
     }
 
     fn change(&mut self, _props: Self::Properties) -> ShouldRender {
@@ -36,7 +41,9 @@ impl Component for DaySelector {
     fn view(&self) -> Html {
         html! {
             <div>
+                <button onclick=self.link.callback(|_| Msg::Previous)> { "Previous" }</button>
                 <p>{ self.props.current_day }</p>
+                <button onclick=self.link.callback(|_| Msg::Next)> { "Next" }</button>
             </div>
         }
     }
