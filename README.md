@@ -22,3 +22,18 @@ You need to have install:
 - `node`, with wsl2 follow steps [here](https://docs.microsoft.com/fr-fr/windows/nodejs/setup-on-wsl2)
 - `electron`, with wsl2 you have to install [VcXsrv Windows X Server](https://sourceforge.net/projects/vcxsrv/), for install help [here](https://techcommunity.microsoft.com/t5/windows-dev-appconsult/running-wsl-gui-apps-on-windows-10/ba-p/1493242) and config bashrc [here](https://wiki.ubuntu.com/WSL#Running_Graphical_Applications)
 - `wasm-pack` follow steps [here](https://github.com/rustwasm/wasm-pack)
+
+You need to create:
+- `app-electron/dist` and create a file `index.html` which contains a basic skeleton:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Webpack App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></head>
+  <body>
+  <script src="bundle.js"></script></body>
+</html>
+```
