@@ -1,11 +1,13 @@
+use crate::day_selector::DaySelector;
+use crate::driver_selector::DriverSelector;
+use crate::hour_selector::HourSelector;
 use chrono::DateTime;
-use day_selector::DaySelector;
-use driver_selector::DriverSelector;
 use wasm_bindgen::prelude::*;
 use yew::prelude::*;
 
 mod day_selector;
 mod driver_selector;
+mod hour_selector;
 
 struct Model {}
 
@@ -32,6 +34,7 @@ impl Component for Model {
             <div>
                 <DaySelector current_day=current_day />
                 <DriverSelector />
+                <HourSelector />
             </div>
         }
     }

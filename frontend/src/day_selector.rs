@@ -1,4 +1,4 @@
-use chrono::{DateTime, FixedOffset, Duration};
+use chrono::{DateTime, Duration, FixedOffset};
 use yew::prelude::*;
 
 pub enum Msg {

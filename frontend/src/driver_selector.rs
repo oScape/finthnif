@@ -1,17 +1,15 @@
 use std::fmt::{Display, Formatter, Result};
-use yew_components::Select;
 use yew::prelude::*;
+use yew_components::Select;
 
 #[derive(PartialEq, Clone)]
 pub struct Driver {
-    firstname: String
+    firstname: String,
 }
 
 impl Driver {
     fn new(firstname: String) -> Self {
-        Self {
-            firstname
-        }
+        Self { firstname }
     }
 }
 
@@ -42,7 +40,10 @@ impl Component for DriverSelector {
     }
 
     fn view(&self) -> Html {
-        let drivers = vec![Driver::new("Franck".to_string()), Driver::new("Jean-Philippe".to_string())];
+        let drivers = vec![
+            Driver::new("Franck".to_string()),
+            Driver::new("Jean-Philippe".to_string()),
+        ];
 
         html! {
             <Select<Driver> options=drivers on_change=self.link.callback(|_| ())/>
