@@ -9,5 +9,6 @@ crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 yew = "0.17"
+yew-components = "0.2"
 wasm-bindgen = "0.2.67"
 chrono = "0.4.19"

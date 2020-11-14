@@ -1,12 +1,13 @@
 use chrono::DateTime;
 use day_selector::DaySelector;
+use driver_selector::DriverSelector;
 use wasm_bindgen::prelude::*;
 use yew::prelude::*;
 
 mod day_selector;
+mod driver_selector;
 
-struct Model {
-}
+struct Model {}
 
 impl Component for Model {
     type Message = ();
@@ -30,6 +31,7 @@ impl Component for Model {
         html! {
             <div>
                 <DaySelector current_day=current_day />
+                <DriverSelector />
             </div>
         }
     }
