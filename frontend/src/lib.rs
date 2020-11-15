@@ -1,3 +1,4 @@
+use crate::create_driver::CreateDriver;
 use crate::day_selector::DaySelector;
 use crate::driver_selector::DriverSelector;
 use crate::hour_selector::HourSelector;
@@ -5,6 +6,7 @@ use chrono::DateTime;
 use wasm_bindgen::prelude::*;
 use yew::prelude::*;
 
+mod create_driver;
 mod day_selector;
 mod driver_selector;
 mod hour_selector;
@@ -35,6 +37,7 @@ impl Component for Model {
                 <DaySelector current_day=current_day />
                 <DriverSelector />
                 <HourSelector />
+                <CreateDriver firstname="Benoit".to_string() lastname="Chassignol".to_string() />
             </div>
         }
     }
@@ -43,4 +46,11 @@ impl Component for Model {
 #[wasm_bindgen(start)]
 pub fn run_app() {
     App::<Model>::new().mount_to_body();
+}
+
+#[macro_export]
+macro_rules! log {
+    ($s:expr $(,$args:expr)*) => {{
+        yew::services::ConsoleService::log(format!($s $(,$args)*).as_str());
+    }};
 }
