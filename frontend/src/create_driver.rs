@@ -41,7 +41,21 @@ impl Component for CreateDriver {
     fn view(&self) -> Html {
         html! {
             <div>
-                <button onclick=self.link.callback(|_| Msg::Create)> { "Create" }</button>
+                <button class=("bp3-button") onclick=self.link.callback(|_| Msg::Create)> { "Create" }</button>
+                <div class=("bp3-dialog-container")>
+                    <div class=("bp3-dialog")>
+                        <div class=("bp3-dialog-header")>
+                            <h4 class=("bp3-heading")>{"Dialog header"}</h4>
+                        </div>
+                        <div class=("bp3-dialog-body")>
+                            {"This dialog hasn't been wired up with any open or close interactions.
+                            It's just an example of markup and styles."}
+                        </div>
+                        <div class=("bp3-dialog-footer")>
+                            <button class=("bp3-button")>{"Secondary button"}</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         }
     }
