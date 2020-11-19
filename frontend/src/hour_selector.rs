@@ -111,8 +111,8 @@ impl Component for HourSelector {
         ];
         html! {
             <div>
-                <Select<Hour> options=hours on_change=self.link.callback(|_| ())/>
-                <Select<Precision> options=precisions on_change=self.link.callback(|_| ())/>
+                <Select<Hour> class=("bp3-button") options=hours on_change=self.link.callback(|_| ()) placeholder=("Heure") />
+                <Select<Precision> class=("bp3-button") options=precisions on_change=self.link.callback(|_| ()) placeholder=("Precision") />
             </div>
         }
     }

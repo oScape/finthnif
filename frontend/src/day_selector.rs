@@ -39,9 +39,9 @@ impl Component for DaySelector {
     fn view(&self) -> Html {
         html! {
             <div>
-                <button onclick=self.link.callback(|_| Msg::Previous)> { "Previous" }</button>
-                <p>{ self.props.current_day }</p>
-                <button onclick=self.link.callback(|_| Msg::Next)> { "Next" }</button>
+                <button class=("bp3-button") onclick=self.link.callback(|_| Msg::Previous)> { "Precedent" }</button>
+                <div class=("bp3-text")>{ self.props.current_day }</div>
+                <button class=("bp3-button") onclick=self.link.callback(|_| Msg::Next)> { "Suivant" }</button>
             </div>
         }
     }

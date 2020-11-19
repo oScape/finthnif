@@ -1,3 +1,4 @@
+import "./styles.css";
 import "./blueprint.css";
 import("./pkg/index.js")
     .then( wasm => {

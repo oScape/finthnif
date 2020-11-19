@@ -46,7 +46,7 @@ impl Component for DriverSelector {
         ];
 
         html! {
-            <Select<Driver> options=drivers on_change=self.link.callback(|_| ())/>
+            <Select<Driver> class=("bp3-button") options=drivers on_change=self.link.callback(|_| ()) placeholder=("Selectionner un chauffeur")/>
         }
     }
 }
