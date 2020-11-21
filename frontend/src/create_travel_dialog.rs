@@ -6,8 +6,8 @@ pub enum Msg {
     Open,
     Close,
     Submit,
-    InputLastname(InputData),
-    InputFirstname(InputData),
+    InputFrom(InputData),
+    InputTo(InputData),
 }
 
 #[derive(Clone, Debug, Properties, PartialEq)]
@@ -15,17 +15,17 @@ pub struct Props {
     #[prop_or_default]
     is_visible: bool,
     #[prop_or_default]
-    lastname: String,
+    from: String,
     #[prop_or_default]
-    firstname: String,
+    to: String,
 }
 
-pub struct CreateDriverDialog {
+pub struct CreateTravelDialog {
     props: Props,
     link: ComponentLink<Self>,
 }
 
-impl Component for CreateDriverDialog {
+impl Component for CreateTravelDialog {
     type Message = Msg;
     type Properties = Props;
 
@@ -38,11 +38,11 @@ impl Component for CreateDriverDialog {
             Msg::Open => self.props.is_visible = true,
             Msg::Close => self.props.is_visible = false,
             Msg::Submit => {
-                log!("{}, {}", self.props.lastname, self.props.firstname);
+                log!("{}, {}", self.props.from, self.props.to);
                 self.props.is_visible = false
             }
-            Msg::InputLastname(e) => self.props.lastname = e.value,
-            Msg::InputFirstname(e) => self.props.firstname = e.value,
+            Msg::InputFrom(e) => self.props.from = e.value,
+            Msg::InputTo(e) => self.props.to = e.value,
         }
         true
     }
@@ -65,22 +65,22 @@ impl Component for CreateDriverDialog {
                         <div class=("bp3-dialog-container bp3-overlay-content bp3-overlay-enter-done")>
                             <div class=("bp3-dialog bp3-dark")>
                                 <div class=("bp3-dialog-header")>
-                                    <h4 class=("bp3-heading")>{"Creer un chauffeur"}</h4>
+                                    <h4 class=("bp3-heading")>{"Creer un voyage"}</h4>
                                 </div>
                                 <div class=("bp3-dialog-body")>
                                     <div class=("bp3-form-group")>
-                                        <label class=("bp3-label") for=("lastname-input")>{ "Nom de famille" }</label>
+                                        <label class=("bp3-label") for=("from-input")>{ "Depart" }</label>
                                         <div class=("bp3-form-content")>
                                             <div class=("bp3-input-group")>
-                                                <input id=("lastname-input") class=("bp3-input") type=("text") oninput=self.link.callback(|e: InputData| Msg::InputLastname(e)) />
+                                                <input id=("from-input") class=("bp3-input") type=("text") oninput=self.link.callback(|e: InputData| Msg::InputFrom(e)) />
                                             </div>
                                         </div>
                                     </div>
                                     <div class=("bp3-form-group")>
-                                        <label class=("bp3-label") for=("firstname-input")>{ "Prenom" }</label>
+                                        <label class=("bp3-label") for=("to-input")>{ "Arrivee" }</label>
                                         <div class=("bp3-form-content")>
                                             <div class=("bp3-input-group")>
-                                                <input id=("firstname-input") class=("bp3-input") type=("text") oninput=self.link.callback(|e: InputData| Msg::InputFirstname(e)) />
+                                                <input id=("to-input") class=("bp3-input") type=("text") oninput=self.link.callback(|e: InputData| Msg::InputTo(e)) />
                                             </div>
                                         </div>
                                     </div>
@@ -102,7 +102,7 @@ impl Component for CreateDriverDialog {
             }
         } else {
             html! {
-                <button class=("bp3-button") onclick=self.link.callback(|_| Msg::Open)> { "Creer un chauffeur" }</button>
+                <button class=("bp3-button") onclick=self.link.callback(|_| Msg::Open)> { "Creer un voyage" }</button>
             }
         }
     }

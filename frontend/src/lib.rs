@@ -1,6 +1,7 @@
 #![recursion_limit = "1024"]
 
 use crate::create_driver_dialog::CreateDriverDialog;
+use crate::create_travel_dialog::CreateTravelDialog;
 use crate::day_selector::DaySelector;
 use crate::driver_selector::DriverSelector;
 use crate::hour_selector::HourSelector;
@@ -9,6 +10,7 @@ use wasm_bindgen::prelude::*;
 use yew::prelude::*;
 
 mod create_driver_dialog;
+mod create_travel_dialog;
 mod day_selector;
 mod driver_selector;
 mod hour_selector;
@@ -40,6 +42,7 @@ impl Component for App {
                 <DriverSelector />
                 <HourSelector />
                 <CreateDriverDialog />
+                <CreateTravelDialog />
             </div>
         }
     }
