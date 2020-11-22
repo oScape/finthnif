@@ -5,7 +5,6 @@ use crate::create_travel_dialog::CreateTravelDialog;
 use crate::day_selector::DaySelector;
 use crate::driver_selector::DriverSelector;
 use crate::hour_selector::HourSelector;
-use chrono::DateTime;
 use wasm_bindgen::prelude::*;
 use yew::prelude::*;
 
@@ -34,11 +33,9 @@ impl Component for App {
     }
 
     fn view(&self) -> Html {
-        let current_day = DateTime::parse_from_rfc2822("Wed, 18 Feb 2015 23:16:09 GMT").unwrap();
-
         html! {
             <div class=("app-root bp3-dark")>
-                <DaySelector current_day=current_day />
+                <DaySelector />
                 <DriverSelector />
                 <HourSelector />
                 <CreateDriverDialog />
