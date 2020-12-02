@@ -159,6 +159,7 @@ impl Component for DaySelector {
                 }
             }
         }
+        self.props.date = self.props.current_day.datetime.into();
         true
     }
 
