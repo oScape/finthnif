@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #30404d;
+}
+
+.app-root.bp3-dark {
+}
+
+.day-selector-container {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.day-selector-text {
+    margin: 0 25px;
+}
+
+.board-container {
+    display: flex;
+}
+.driver-board-container, .travel-board-container {
+    width: 50%;
+}
+.driver-board-header {
+    display: flex;
+    justify-content: space-between;
+}
+.travel-board-header {
+    display: flex;
+    justify-content: flex-end;
+}

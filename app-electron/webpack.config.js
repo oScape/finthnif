@@ -23,5 +23,13 @@ module.exports = {
             TextEncoder: ['text-encoding', 'TextEncoder']
         })
     ],
+    module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
+        ],
+    },
     mode: 'development'
 };

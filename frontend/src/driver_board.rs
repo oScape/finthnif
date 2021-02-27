@@ -24,9 +24,11 @@ impl Component for DriverBoard {
 
     fn view(&self) -> Html {
         html! {
-            <div>
-                <DriverSelector />
-                <CreateDriverDialog />
+            <div class=("driver-board-container")>
+                <div class=("driver-board-header")>
+                    <DriverSelector />
+                    <CreateDriverDialog />
+                </div>
             </div>
         }
     }

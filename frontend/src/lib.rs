@@ -38,9 +38,10 @@ impl Component for App {
         html! {
             <div class=("app-root bp3-dark")>
                 <DaySelector />
-                <DriverBoard />
-                <TravelBoard />
-                <HourSelector />
+                <div class=("board-container")>
+                    <DriverBoard />
+                    <TravelBoard />
+                </div>
             </div>
         }
     }

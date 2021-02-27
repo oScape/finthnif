@@ -23,8 +23,10 @@ impl Component for TravelBoard {
 
     fn view(&self) -> Html {
         html! {
-            <div>
-                <CreateTravelDialog />
+            <div class=("travel-board-container")>
+                <div class=("travel-board-header")>
+                    <CreateTravelDialog />
+                </div>
             </div>
         }
     }

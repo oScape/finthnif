@@ -169,9 +169,9 @@ impl Component for DaySelector {
 
     fn view(&self) -> Html {
         html! {
-            <div>
+            <div class=("day-selector-container")>
                 <button class=("bp3-button") onclick=self.link.callback(|_| Msg::Previous)> { "Precedent" }</button>
-                <div class=("bp3-text")>{ self.props.date.clone() }</div>
+                <div class=("bp3-text day-selector-text")>{ self.props.date.clone() }</div>
                 <button class=("bp3-button") onclick=self.link.callback(|_| Msg::Next)> { "Suivant" }</button>
             </div>
         }
