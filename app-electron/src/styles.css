@@ -33,3 +33,6 @@ body {
     display: flex;
     justify-content: flex-end;
 }
+.travel-board-table {
+    width: 100%;
+}
