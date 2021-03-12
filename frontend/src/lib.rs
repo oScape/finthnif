@@ -1,5 +1,6 @@
 #![recursion_limit = "1024"]
 
+use crate::assign_dialog::AssignDialog;
 use crate::create_driver_dialog::CreateDriverDialog;
 use crate::day_selector::DaySelector;
 use crate::driver_board::DriverBoard;
@@ -8,6 +9,7 @@ use crate::travel_board::TravelBoard;
 use wasm_bindgen::prelude::*;
 use yew::prelude::*;
 
+mod assign_dialog;
 mod create_driver_dialog;
 mod create_travel_dialog;
 mod day_selector;
