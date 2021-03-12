@@ -84,7 +84,7 @@ impl Component for AssignDialog {
                 </div>
             }
         } else {
-            html!{ <div></div> }
+            html! { <div></div> }
         }
     }
 }

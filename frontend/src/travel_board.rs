@@ -1,9 +1,9 @@
-use crate::create_travel_dialog::CreateTravelDialog;
 use crate::assign_dialog::AssignDialog;
+use crate::create_travel_dialog::CreateTravelDialog;
 use yew::prelude::*;
 
 pub enum Msg {
-    Assign
+    Assign,
 }
 
 #[derive(Clone, Debug, Properties, PartialEq)]
