@@ -2,13 +2,26 @@ use std::fmt::{Display, Formatter, Result};
 use yew::prelude::*;
 use yew_components::Select;
 
-#[derive(PartialEq, Clone)]
+#[derive(Clone, Debug, Properties, PartialEq)]
+pub struct Props {
+    #[prop_or_default]
+    pub selected_driver: Driver,
+    pub on_change: Callback<Driver>,
+}
+
+#[derive(PartialEq, Clone, Debug)]
 pub struct Driver {
     firstname: String,
 }
 
+impl Default for Driver {
+    fn default() -> Self {
+        Self { firstname: String::default() }
+    }
+}
+
 impl Driver {
-    fn new(firstname: String) -> Self {
+    pub fn new(firstname: String) -> Self {
         Self { firstname }
     }
 }
@@ -20,15 +33,16 @@ impl Display for Driver {
 }
 
 pub struct DriverSelector {
-    link: ComponentLink<Self>,
+    props: Props,
+    _link: ComponentLink<Self>,
 }
 
 impl Component for DriverSelector {
     type Message = ();
-    type Properties = ();
+    type Properties = Props;
 
-    fn create(_props: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Self { link }
+    fn create(props: Self::Properties, _link: ComponentLink<Self>) -> Self {
+        Self { props, _link }
     }
 
     fn update(&mut self, _msg: Self::Message) -> ShouldRender {
@@ -46,7 +60,7 @@ impl Component for DriverSelector {
         ];
 
         html! {
-            <Select<Driver> class=("bp3-button") options=drivers on_change=self.link.callback(|_| ()) placeholder=("Selectionner un chauffeur")/>
+            <Select<Driver> class=("bp3-button") options=drivers on_change=self.props.on_change.clone() placeholder=("Selectionner un chauffeur")/>
         }
     }
 }

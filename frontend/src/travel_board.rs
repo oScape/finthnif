@@ -1,4 +1,4 @@
-use crate::assign_dialog::AssignDialog;
+use crate::{assign_dialog::AssignDialog, driver_selector::Driver};
 use crate::create_travel_dialog::CreateTravelDialog;
 use yew::prelude::*;
 
@@ -10,6 +10,8 @@ pub enum Msg {
 pub struct Props {
     #[prop_or_default]
     assign_dialog_opened: bool,
+    #[prop_or_default]
+    selected_driver: Driver,
 }
 
 pub struct TravelBoard {
@@ -70,7 +72,7 @@ impl Component for TravelBoard {
                         </tbody>
                     </table>
                 </div>
-                <AssignDialog is_visible=self.props.assign_dialog_opened />
+                <AssignDialog is_visible=self.props.assign_dialog_opened selected_driver=self.props.selected_driver.clone() />
             </div>
         }
     }

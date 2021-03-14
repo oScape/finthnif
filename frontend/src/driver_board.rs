@@ -1,21 +1,40 @@
-use crate::driver_selector::DriverSelector;
+use crate::driver_selector::{Driver, DriverSelector};
 use crate::CreateDriverDialog;
 use yew::prelude::*;
 
+use crate::log;
+
+pub enum Msg {
+    InputDriver(Driver),
+}
+
+#[derive(Clone, Debug, Properties, PartialEq)]
+pub struct Props {
+    #[prop_or_default]
+    pub selected_driver: Driver,
+}
+
 pub struct DriverBoard {
-    _link: ComponentLink<Self>,
+    props: Props,
+    link: ComponentLink<Self>,
 }
 
 impl Component for DriverBoard {
-    type Message = ();
-    type Properties = ();
+    type Message = Msg;
+    type Properties = Props;
 
-    fn create(_props: Self::Properties, _link: ComponentLink<Self>) -> Self {
-        Self { _link }
+    fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
+        Self { props, link }
     }
 
-    fn update(&mut self, _msg: Self::Message) -> ShouldRender {
-        false
+    fn update(&mut self, msg: Self::Message) -> ShouldRender {
+        match msg {
+            Msg::InputDriver(e) => {
+                log!("{:?}", e);
+                self.props.selected_driver = e
+            },
+        }
+        true
     }
 
     fn change(&mut self, _props: Self::Properties) -> ShouldRender {
@@ -26,7 +45,7 @@ impl Component for DriverBoard {
         html! {
             <div class=("driver-board-container")>
                 <div class=("driver-board-header")>
-                    <DriverSelector />
+                    <DriverSelector on_change=self.link.callback(|e: Driver| Msg::InputDriver(e)) />
                     <CreateDriverDialog />
                 </div>
             </div>

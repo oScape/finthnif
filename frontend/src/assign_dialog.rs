@@ -1,4 +1,4 @@
-use crate::driver_selector::DriverSelector;
+use crate::driver_selector::{Driver, DriverSelector};
 use yew::prelude::*;
 
 use crate::log;
@@ -6,14 +6,15 @@ use crate::log;
 pub enum Msg {
     Close,
     Submit,
+    InputDriver(Driver),
 }
 
 #[derive(Clone, Debug, Properties, PartialEq)]
 pub struct Props {
     #[prop_or_default]
-    driver: String,
-    #[prop_or_default]
     pub is_visible: bool,
+    #[prop_or_default]
+    pub selected_driver: Driver,
 }
 
 pub struct AssignDialog {
@@ -33,9 +34,13 @@ impl Component for AssignDialog {
         match msg {
             Msg::Close => self.props.is_visible = false,
             Msg::Submit => {
-                log!("{}", self.props.driver);
+                log!("{}", self.props.selected_driver);
                 self.props.is_visible = false
-            }
+            },
+            Msg::InputDriver(e) => {
+                log!("{:?}", e);
+                self.props.selected_driver = e
+            },
         }
         true
     }
@@ -64,7 +69,7 @@ impl Component for AssignDialog {
                                     <div class=("bp3-form-group")>
                                         <label class=("bp3-label") for=("from-input")>{ "Chauffeur" }</label>
                                         <div class=("bp3-form-content")>
-                                            <DriverSelector />
+                                            <DriverSelector selected_driver=self.props.selected_driver.clone() on_change=self.link.callback(|e: Driver| Msg::InputDriver(e)) />
                                         </div>
                                     </div>
                                 </div>
