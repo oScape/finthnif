@@ -1,5 +1,5 @@
-use crate::{assign_dialog::AssignDialog, driver_selector::Driver};
 use crate::create_travel_dialog::CreateTravelDialog;
+use crate::{assign_dialog::AssignDialog, driver_selector::Driver};
 use yew::prelude::*;
 
 pub enum Msg {

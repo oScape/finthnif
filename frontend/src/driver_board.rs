@@ -32,7 +32,7 @@ impl Component for DriverBoard {
             Msg::InputDriver(e) => {
                 log!("{:?}", e);
                 self.props.selected_driver = e
-            },
+            }
         }
         true
     }

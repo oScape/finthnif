@@ -16,7 +16,9 @@ pub struct Driver {
 
 impl Default for Driver {
     fn default() -> Self {
-        Self { firstname: String::default() }
+        Self {
+            firstname: String::default(),
+        }
     }
 }
 

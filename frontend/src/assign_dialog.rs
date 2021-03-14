@@ -36,11 +36,11 @@ impl Component for AssignDialog {
             Msg::Submit => {
                 log!("{}", self.props.selected_driver);
                 self.props.is_visible = false
-            },
+            }
             Msg::InputDriver(e) => {
                 log!("{:?}", e);
                 self.props.selected_driver = e
-            },
+            }
         }
         true
     }
