@@ -2,8 +2,14 @@ use std::fmt::{Display, Formatter, Result};
 use yew::prelude::*;
 use yew_components::Select;
 
-#[derive(PartialEq, Clone)]
-enum Hour {
+#[derive(Clone, Debug, Properties, PartialEq)]
+pub struct Props {
+    pub on_change_hour: Callback<Hour>,
+    pub on_change_precision: Callback<Precision>,
+}
+
+#[derive(PartialEq, Clone, Debug)]
+pub enum Hour {
     Five,
     Six,
     Seven,
@@ -45,8 +51,8 @@ impl Display for Hour {
     }
 }
 
-#[derive(PartialEq, Clone)]
-enum Precision {
+#[derive(PartialEq, Clone, Debug)]
+pub enum Precision {
     Oclock,
     QuarterPast,
     Half,
@@ -64,16 +70,29 @@ impl Display for Precision {
     }
 }
 
+impl Default for Hour {
+    fn default() -> Self {
+        Hour::Five
+    }
+}
+
+impl Default for Precision {
+    fn default() -> Self {
+        Precision::Oclock
+    }
+}
+
 pub struct HourSelector {
-    link: ComponentLink<Self>,
+    props: Props,
+    _link: ComponentLink<Self>,
 }
 
 impl Component for HourSelector {
     type Message = ();
-    type Properties = ();
+    type Properties = Props;
 
-    fn create(_props: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Self { link }
+    fn create(props: Self::Properties, _link: ComponentLink<Self>) -> Self {
+        Self { props, _link }
     }
 
     fn update(&mut self, _msg: Self::Message) -> ShouldRender {
@@ -111,8 +130,8 @@ impl Component for HourSelector {
         ];
         html! {
             <div>
-                <Select<Hour> class=("bp3-button") options=hours on_change=self.link.callback(|_| ()) placeholder=("Heure") />
-                <Select<Precision> class=("bp3-button") options=precisions on_change=self.link.callback(|_| ()) placeholder=("Precision") />
+                <Select<Hour> class=("bp3-button") options=hours on_change=self.props.on_change_hour.clone() placeholder=("Heure") />
+                <Select<Precision> class=("bp3-button") options=precisions on_change=self.props.on_change_precision.clone() placeholder=("Precision") />
             </div>
         }
     }

@@ -4,8 +4,6 @@ use yew_components::Select;
 
 #[derive(Clone, Debug, Properties, PartialEq)]
 pub struct Props {
-    #[prop_or_default]
-    pub selected_driver: Driver,
     pub on_change: Callback<Driver>,
 }
 
