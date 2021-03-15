@@ -1,4 +1,7 @@
-use crate::{driver_selector::{Driver, DriverSelector}, hour_selector::{Hour, Precision, HourSelector}};
+use crate::{
+    driver_selector::{Driver, DriverSelector},
+    hour_selector::{Hour, HourSelector, Precision},
+};
 use yew::prelude::*;
 
 use crate::log;
@@ -8,7 +11,7 @@ pub enum Msg {
     Submit,
     InputDriver(Driver),
     InputHour(Hour),
-    InputPrecision(Precision)
+    InputPrecision(Precision),
 }
 
 #[derive(Clone, Debug, Properties, PartialEq)]
@@ -20,7 +23,7 @@ pub struct Props {
     #[prop_or_default]
     pub selected_hour: Hour,
     #[prop_or_default]
-    pub selected_precision: Precision
+    pub selected_precision: Precision,
 }
 
 pub struct AssignDialog {
@@ -89,9 +92,9 @@ impl Component for AssignDialog {
                                     <div class=("bp3-form-group")>
                                         <label class=("bp3-label") for=("from-input")>{ "Heure" }</label>
                                         <div class=("bp3-form-content")>
-                                            <HourSelector 
-                                                on_change_hour=self.link.callback(|e: Hour| Msg::InputHour(e)) 
-                                                on_change_precision=self.link.callback(|e: Precision| Msg::InputPrecision(e)) 
+                                            <HourSelector
+                                                on_change_hour=self.link.callback(|e: Hour| Msg::InputHour(e))
+                                                on_change_precision=self.link.callback(|e: Precision| Msg::InputPrecision(e))
                                             />
                                         </div>
                                     </div>
