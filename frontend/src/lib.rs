@@ -1,4 +1,4 @@
-#![recursion_limit = "1024"]
+#![recursion_limit = "2058"]
 
 use crate::assign_dialog::AssignDialog;
 use crate::create_driver_dialog::CreateDriverDialog;
