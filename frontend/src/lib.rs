@@ -12,11 +12,11 @@ mod create_driver_dialog;
 mod create_travel_dialog;
 mod day_selector;
 mod driver_board;
+mod driver_schedule;
 mod driver_selector;
 mod hour_selector;
-mod travel_board;
 mod timeline;
-mod driver_schedule;
+mod travel_board;
 
 struct App {}
 

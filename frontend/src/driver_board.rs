@@ -1,6 +1,6 @@
+use crate::driver_schedule::DriverSchedule;
 use crate::driver_selector::{Driver, DriverSelector};
 use crate::timeline::Timeline;
-use crate::driver_schedule::DriverSchedule;
 use crate::CreateDriverDialog;
 use yew::prelude::*;
 
