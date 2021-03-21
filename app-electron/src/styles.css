@@ -36,18 +36,226 @@ body {
 .travel-board-table {
     width: 100%;
 }
+.driver-board-body {
+    display: flex;
+}
 .timeline {
-
+    width: 10%;
 }
-.hour-container {
+/* .hour-container {
     border-bottom: white 1px solid;
-    padding: 5px 0;
-}
+    padding-top: 1px;
+} */
 .hour {
+    height: 20px;
+    border-bottom: rgba(255, 255, 255, 1) 1px solid;
     font-size: 16px; 
 }
 .precision {
+    height: 20px;
+    padding-top: 3px;
+    border-bottom: rgba(255, 255, 255, .4) 1px solid;
     font-size: 12px;
     margin-left: 10px;
-    padding: 2px 0px;
+}
+.driver-schedule {
+    width: 90%;
+}
+.travel-container {
+    border: white 1px solid;
+}
+.travel-hour-0.travel-precision-1 {
+    height: 20px;
+}
+.travel-hour-0.travel-precision-2 {
+    height: 40px;
+}
+.travel-hour-0.travel-precision-3 {
+    height: 60px;
+}
+.travel-hour-0.travel-precision-4 {
+    height: 80px;
+}
+.travel-hour-1.travel-precision-1 {
+    height: 100px;
+}
+.travel-hour-1.travel-precision-2 {
+    height: 120px;
+}
+.travel-hour-1.travel-precision-3 {
+    height: 140px;
+}
+.travel-hour-1.travel-precision-4 {
+    height: 160px;
+}
+.travel-hour-2.travel-precision-1 {
+    height: 180px;
+}
+.travel-hour-2.travel-precision-2 {
+    height: 200px;
+}
+.travel-hour-2.travel-precision-3 {
+    height: 220px;
+}
+.travel-hour-2.travel-precision-4 {
+    height: 240px;
+}
+.travel-hour-3.travel-precision-1 {
+    height: 260px;
+}
+.travel-hour-3.travel-precision-2 {
+    height: 280px;
+}
+.travel-hour-3.travel-precision-3 {
+    height: 300px;
+}
+.travel-hour-3.travel-precision-4 {
+    height: 320px;
+}
+.travel-hour-4.travel-precision-1 {
+    height: 340px;
+}
+.travel-hour-4.travel-precision-2 {
+    height: 360px;
+}
+.travel-hour-4.travel-precision-3 {
+    height: 380px;
+}
+.travel-hour-4.travel-precision-4 {
+    height: 400px;
+}
+.travel-hour-5.travel-precision-1 {
+    height: 420px;
+}
+.travel-hour-5.travel-precision-2 {
+    height: 440px;
+}
+.travel-hour-5.travel-precision-3 {
+    height: 460px;
+}
+.travel-hour-5.travel-precision-4 {
+    height: 480px;
+}
+.travel-hour-6.travel-precision-1 {
+    height: 500px;
+}
+.travel-hour-6.travel-precision-2 {
+    height: 520px;
+}
+.travel-hour-6.travel-precision-3 {
+    height: 540px;
+}
+.travel-hour-6.travel-precision-4 {
+    height: 560px;
+}
+.travel-hour-7.travel-precision-1 {
+    height: 580px;
+}
+.travel-hour-7.travel-precision-2 {
+    height: 600px;
+}
+.travel-hour-7.travel-precision-3 {
+    height: 620px;
+}
+.travel-hour-7.travel-precision-4 {
+    height: 640px;
+}
+.travel-hour-8.travel-precision-1 {
+    height: 660px;
+}
+.travel-hour-8.travel-precision-2 {
+    height: 680px;
+}
+.travel-hour-8.travel-precision-3 {
+    height: 700px;
+}
+.travel-hour-8.travel-precision-4 {
+    height: 720px;
+}
+.travel-hour-9.travel-precision-1 {
+    height: 740px;
+}
+.travel-hour-9.travel-precision-2 {
+    height: 760px;
+}
+.travel-hour-9.travel-precision-3 {
+    height: 780px;
+}
+.travel-hour-9.travel-precision-4 {
+    height: 800px;
+}
+.travel-hour-10.travel-precision-1 {
+    height: 820px;
+}
+.travel-hour-10.travel-precision-2 {
+    height: 840px;
+}
+.travel-hour-10.travel-precision-3 {
+    height: 860px;
+}
+.travel-hour-10.travel-precision-4 {
+    height: 880px;
+}
+.travel-hour-11.travel-precision-1 {
+    height: 900px;
+}
+.travel-hour-11.travel-precision-2 {
+    height: 920px;
+}
+.travel-hour-11.travel-precision-3 {
+    height: 940px;
+}
+.travel-hour-11.travel-precision-4 {
+    height: 960px;
+}
+.travel-hour-12.travel-precision-1 {
+    height: 980px;
+}
+.travel-hour-12.travel-precision-2 {
+    height: 1000px;
+}
+.travel-hour-12.travel-precision-3 {
+    height: 1020px;
+}
+.travel-hour-12.travel-precision-4 {
+    height: 1040px;
+}
+.travel-hour-13.travel-precision-1 {
+    height: 1060px;
+}
+.travel-hour-13.travel-precision-2 {
+    height: 1080px;
+}
+.travel-hour-13.travel-precision-3 {
+    height: 1100px;
+}
+.travel-hour-13.travel-precision-4 {
+    height: 1120px;
+}
+.travel-hour-14.travel-precision-1 {
+    height: 1140px;
+}
+.travel-hour-14.travel-precision-2 {
+    height: 1160px;
+}
+.travel-hour-14.travel-precision-3 {
+    height: 1180px;
+}
+.travel-hour-14.travel-precision-4 {
+    height: 1200px;
+}
+.travel-hour-15.travel-precision-1 {
+    height: 1220px;
+}
+.travel-hour-15.travel-precision-2 {
+    height: 1240px;
+}
+.travel-hour-15.travel-precision-3 {
+    height: 1260px;
+}
+.travel-hour-15.travel-precision-4 {
+    height: 1280px;
+}
+.travel-hour-16.travel-precision-1 {
+    height: 1300px;
 }

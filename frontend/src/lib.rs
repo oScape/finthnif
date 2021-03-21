@@ -1,10 +1,8 @@
 #![recursion_limit = "2058"]
 
-use crate::assign_dialog::AssignDialog;
 use crate::create_driver_dialog::CreateDriverDialog;
 use crate::day_selector::DaySelector;
 use crate::driver_board::DriverBoard;
-use crate::hour_selector::HourSelector;
 use crate::travel_board::TravelBoard;
 use wasm_bindgen::prelude::*;
 use yew::prelude::*;
@@ -17,6 +15,8 @@ mod driver_board;
 mod driver_selector;
 mod hour_selector;
 mod travel_board;
+mod timeline;
+mod driver_schedule;
 
 struct App {}
 
