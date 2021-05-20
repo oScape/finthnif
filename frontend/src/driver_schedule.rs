@@ -1,20 +1,16 @@
 use yew::prelude::*;
 
-use crate::log;
-
-pub struct DriverSchedule {
-    link: ComponentLink<Self>,
-}
+pub struct DriverSchedule {}
 
 impl Component for DriverSchedule {
     type Message = ();
     type Properties = ();
 
-    fn create(_props: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Self { link }
+    fn create(_props: Self::Properties, _link: ComponentLink<Self>) -> Self {
+        Self {}
     }
 
-    fn update(&mut self, msg: Self::Message) -> ShouldRender {
+    fn update(&mut self, _msg: Self::Message) -> ShouldRender {
         false
     }
 
@@ -26,24 +22,24 @@ impl Component for DriverSchedule {
         html! {
             <div class=("driver-schedule")>
                 <div class=("bp3-callout travel-container travel-hour-1 travel-precision-3")>
-                    <div class=("depart")>{"Belmont"}</div>
-                    <div class=("arrivee")>{"Lyon"}</div>
+                    <div>{"Belmont"}</div>
+                    <div>{"Lyon"}</div>
                 </div>
                 <div class=("bp3-callout travel-container travel-hour-1 travel-precision-3")>
-                    <div class=("depart")>{"Lyon"}</div>
-                    <div class=("arrivee")>{"Belmont"}</div>
+                    <div>{"Lyon"}</div>
+                    <div>{"Belmont"}</div>
                 </div>
                 <div class=("bp3-callout travel-container travel-hour-0 travel-precision-3")>
-                    <div class=("depart")>{"Belmont"}</div>
-                    <div class=("arrivee")>{"Villefranche sur saone"}</div>
+                    <div>{"Belmont"}</div>
+                    <div>{"Villefranche sur saone"}</div>
                 </div>
                 <div class=("bp3-callout travel-container travel-hour-5 travel-precision-1")>
-                    <div class=("depart")>{"Villefranche sur saone"}</div>
-                    <div class=("arrivee")>{"Paris"}</div>
+                    <div>{"Villefranche sur saone"}</div>
+                    <div>{"Paris"}</div>
                 </div>
                 <div class=("bp3-callout travel-container travel-hour-6 travel-precision-3")>
-                    <div class=("depart")>{"Paris"}</div>
-                    <div class=("arrivee")>{"Bordeaux"}</div>
+                    <div>{"Paris"}</div>
+                    <div>{"Bordeaux"}</div>
                 </div>
             </div>
         }

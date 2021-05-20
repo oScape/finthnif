@@ -1,20 +1,16 @@
 use yew::prelude::*;
 
-use crate::log;
-
-pub struct Timeline {
-    link: ComponentLink<Self>,
-}
+pub struct Timeline {}
 
 impl Component for Timeline {
     type Message = ();
     type Properties = ();
 
-    fn create(_props: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Self { link }
+    fn create(_props: Self::Properties, _link: ComponentLink<Self>) -> Self {
+        Self {}
     }
 
-    fn update(&mut self, msg: Self::Message) -> ShouldRender {
+    fn update(&mut self, _msg: Self::Message) -> ShouldRender {
         false
     }
 

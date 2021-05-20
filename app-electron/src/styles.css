@@ -42,10 +42,6 @@ body {
 .timeline {
     width: 10%;
 }
-/* .hour-container {
-    border-bottom: white 1px solid;
-    padding-top: 1px;
-} */
 .hour {
     height: 20px;
     border-bottom: rgba(255, 255, 255, 1) 1px solid;

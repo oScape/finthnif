@@ -32,8 +32,8 @@ impl Component for DriverBoard {
     fn update(&mut self, msg: Self::Message) -> ShouldRender {
         match msg {
             Msg::InputDriver(e) => {
-                log!("{:?}", e);
-                self.props.selected_driver = e
+                self.props.selected_driver = e;
+                log!("{:?}", self.props.selected_driver);
             }
         }
         true
